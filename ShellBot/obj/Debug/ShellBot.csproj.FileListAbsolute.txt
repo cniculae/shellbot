@@ -1,0 +1,39 @@
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\Bot Application1.dll.config
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\Bot Application1.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\Bot Application1.pdb
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\Autofac.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\Chronic.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\Microsoft.Bot.Builder.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\Microsoft.Bot.Connector.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\Microsoft.Rest.ClientRuntime.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\Microsoft.WindowsAzure.Configuration.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\Newtonsoft.Json.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\System.IdentityModel.Tokens.Jwt.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\System.Net.Http.Formatting.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\System.Web.Http.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\System.Web.Http.WebHost.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\Autofac.xml
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\Microsoft.Bot.Builder.xml
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\Microsoft.Bot.Connector.xml
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\Microsoft.IdentityModel.Protocol.Extensions.pdb
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\Microsoft.Rest.ClientRuntime.xml
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\Microsoft.WindowsAzure.Configuration.xml
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\Newtonsoft.Json.xml
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\System.IdentityModel.Tokens.Jwt.pdb
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\System.IdentityModel.Tokens.Jwt.xml
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\System.Net.Http.Formatting.xml
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\System.Web.Http.xml
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\System.Web.Http.WebHost.xml
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\ar\Microsoft.Bot.Builder.resources.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\en\Microsoft.Bot.Builder.resources.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\es\Microsoft.Bot.Builder.resources.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\fa\Microsoft.Bot.Builder.resources.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\fr\Microsoft.Bot.Builder.resources.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\ja\Microsoft.Bot.Builder.resources.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\ru\Microsoft.Bot.Builder.resources.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\zh-hans\Microsoft.Bot.Builder.resources.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\obj\Debug\ShellBot.csprojResolveAssemblyReference.cache
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\obj\Debug\Bot Application1.dll
+c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\obj\Debug\Bot Application1.pdb
