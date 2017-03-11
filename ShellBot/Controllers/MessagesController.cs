@@ -9,6 +9,7 @@ using Microsoft.Bot.Connector;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using Microsoft.Bot.Builder.Dialogs;
+using Renci.SshNet;
 
 namespace ShellBot
 {
@@ -72,6 +73,7 @@ public class EchoDialog : IDialog<object>
     protected bool waitingHost, waitingPassword, waitingUsername;
     protected String host, username, password;
     protected bool connectedToSSH;
+    protected SshClient client;
     public async Task StartAsync(IDialogContext context)
     {
         context.Wait(MessageReceivedAsync);
@@ -116,6 +118,20 @@ public class EchoDialog : IDialog<object>
             password = text;
             waitingPassword = false;
             await context.PostAsync("Trying to connect..");
+
+            //Set up the SSH connection
+            try {
+                //Start the connection
+                this.client = new SshClient(host, username, password);
+                this.client.Connect();
+                var output = client.RunCommand("echo test");
+                this.client.Disconnect();
+                await context.PostAsync(output.Result.ToString());
+            }catch(Exception e)
+            {
+                await context.PostAsync("A problem appeared"+e.Message);
+
+            }
             context.Wait(MessageReceivedAsync);
             return;
         }

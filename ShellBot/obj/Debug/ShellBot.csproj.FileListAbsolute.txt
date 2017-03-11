@@ -37,3 +37,43 @@ c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\bin\zh-h
 c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\obj\Debug\ShellBot.csprojResolveAssemblyReference.cache
 c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\obj\Debug\Bot Application1.dll
 c:\users\cristi\documents\visual studio 2015\Projects\ShellBot\ShellBot\obj\Debug\Bot Application1.pdb
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\Bot Application1.dll.config
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\Bot Application1.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\Bot Application1.pdb
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\Autofac.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\Chronic.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\Microsoft.Bot.Builder.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\Microsoft.Bot.Connector.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\Microsoft.Rest.ClientRuntime.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\Newtonsoft.Json.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\System.Net.Http.Formatting.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\System.Web.Http.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\System.Web.Http.WebHost.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\Autofac.xml
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\Microsoft.Bot.Builder.xml
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\Microsoft.Bot.Connector.xml
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\Microsoft.IdentityModel.Protocol.Extensions.pdb
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\Microsoft.Rest.ClientRuntime.xml
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\Microsoft.WindowsAzure.Configuration.xml
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\Newtonsoft.Json.xml
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\System.IdentityModel.Tokens.Jwt.pdb
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\System.Net.Http.Formatting.xml
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\System.Web.Http.xml
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\System.Web.Http.WebHost.xml
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\ar\Microsoft.Bot.Builder.resources.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\en\Microsoft.Bot.Builder.resources.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\es\Microsoft.Bot.Builder.resources.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\fa\Microsoft.Bot.Builder.resources.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\fr\Microsoft.Bot.Builder.resources.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\ja\Microsoft.Bot.Builder.resources.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\ru\Microsoft.Bot.Builder.resources.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\zh-hans\Microsoft.Bot.Builder.resources.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\obj\Debug\ShellBot.csprojResolveAssemblyReference.cache
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\obj\Debug\Bot Application1.dll
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\obj\Debug\Bot Application1.pdb
+C:\Users\Cristi\Documents\Visual Studio 2015\Projects\ShellBot\shellbot\ShellBot\bin\Renci.SshNet.dll
