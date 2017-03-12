@@ -83,14 +83,15 @@ public class EchoDialog : IDialog<object>
     public virtual async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> argument)
     {
         var message = await argument;
-        if(this.firstMessage) {
+        if (this.firstMessage)
+        {
             firstMessage = false;
             await context.PostAsync("Hey. I'm shell bot and I can run for you SSH commands on any server you want. Try me by typing \"Connect\" :)");
             context.Wait(MessageReceivedAsync);
             return;
         }
         var text = message.Text.Trim();
-        if(text == "Connect")
+        if (text == "Connect")
         {
             waitingHost = true;
             await context.PostAsync("Type in your host:");
@@ -125,65 +126,76 @@ public class EchoDialog : IDialog<object>
             try
             {
 
-            using(var client = new SshClient(host, username, password)) { 
-                //Start the connection
-                client.Connect();
-                var output = client.RunCommand("ls");
-                client.Disconnect();
-                this.connectedToSSH = true;
-                await context.PostAsync(output.Result.ToString());
-                
+                using (var client = new SshClient(host, username, password))
+                {
+                    //Start the connection
+                    client.Connect();
+                    var output = client.RunCommand("ls");
+                    client.Disconnect();
+                    this.connectedToSSH = true;
+                    await context.PostAsync(output.Result.ToString());
+
                 }
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 await context.PostAsync("Invalid credentials. Please try again. Enter your host:");
                 this.waitingHost = true;
-                
+
             }
             context.Wait(MessageReceivedAsync);
             return;
         }
         if (this.connectedToSSH)
         {
-            if (text.StartsWith("cd"))
+            if (text.Length > 2 && text[0] == 'c' && text[1] == 'd')
             {
                 //construct cd string
                 //run command on generated cd string
                 //if successful
+
                 if (text.Trim().Equals("cd"))
                 {
 
                 }
-                else if (text.Trim().IndexOf('/') == -1)
+                else
                 {
-                    if (text.Substring(text.IndexOf(" ")).Trim().Equals(".."))
-                    {
-                        if (cdN != 0)
-                            cdN--;
+                    if (text.IndexOf('/') != -1) {
+                        String[] tempCd = text.Substring(text.IndexOf(" ")).Trim().Split('/');
+                        for (int i = 0; i < tempCd.Length; ++i)
+                        {
+                            if (tempCd[i].Equals("../") || tempCd[i].Equals(".."))
+                            {
+                                if (cdN != 0)
+                                {
+                                    cd.RemoveAt(cdN-1);
+                                    cdN--;
+                                }
+                            }
+                            else
+                            {
+                                cdN++;
+                                cd.Add(tempCd[i]);
+                            }
+                        }
                     }
                     else
                     {
-                        cdN++;
-                        cd.Add(text.Substring(text.IndexOf(" ")).Trim());
-                    }
-                }
-                else
-                {
-                    String[] tempCd = text.Substring(text.IndexOf(" ")).Trim().Split('/');
-                    for (int i = 0; i < tempCd.Length; ++i)
-                    {
-                        if (tempCd.Equals(".."))
+                        if (text.Substring(text.IndexOf(" ")).Trim().Equals(".."))
                         {
                             if (cdN != 0)
                             {
+                                cd.RemoveAt(cdN-1);
                                 cdN--;
                             }
                         }
                         else
                         {
-                            cd.Add(tempCd[i]);
+                            cdN++;
+                            cd.Add(text.Substring(text.IndexOf(" ")).Trim());
                         }
                     }
+                    
                 }
             }
             else
@@ -191,10 +203,15 @@ public class EchoDialog : IDialog<object>
                 try
                 {
                     string pwd = "/";
+                    await context.PostAsync(cdN.ToString());
+
                     for (int i = 0; i < cdN; i++)
                     {
                         pwd += cd[i] + "/";
                     }
+
+                    await context.PostAsync(pwd);
+
 
                     using (var client = new SshClient(host, username, password))
                     {
@@ -210,14 +227,9 @@ public class EchoDialog : IDialog<object>
                 {
                     await context.PostAsync("An error occurred");
                 }
-                context.Wait(MessageReceivedAsync);
-                return;
             }
-        }
-        
-        else {
-            await context.PostAsync($"{this.count++}: You said {message.Text}");
             context.Wait(MessageReceivedAsync);
+            return;
         }
     }
 }
