@@ -83,6 +83,7 @@ public class EchoDialog : IDialog<object>
     public virtual async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> argument)
     {
         var message = await argument;
+        var text = message.Text.Trim();
         if (this.firstMessage)
         {
             firstMessage = false;
@@ -90,7 +91,7 @@ public class EchoDialog : IDialog<object>
             context.Wait(MessageReceivedAsync);
             return;
         }
-        var text = message.Text.Trim();
+
         if (text == "Connect")
         {
             waitingHost = true;
@@ -98,6 +99,7 @@ public class EchoDialog : IDialog<object>
             context.Wait(MessageReceivedAsync);
             return;
         }
+
         if (waitingHost)
         {
             host = text;
@@ -146,6 +148,7 @@ public class EchoDialog : IDialog<object>
             context.Wait(MessageReceivedAsync);
             return;
         }
+
         if (this.connectedToSSH)
         {
             if (text.Length > 2 && text[0] == 'c' && text[1] == 'd')
@@ -164,6 +167,8 @@ public class EchoDialog : IDialog<object>
                         String[] tempCd = text.Substring(text.IndexOf(" ")).Trim().Split('/');
                         for (int i = 0; i < tempCd.Length; ++i)
                         {
+                            if (i == tempCd.Length - 1 && tempCd[i].Trim().Equals(""))
+                                break;
                             if (tempCd[i].Equals("../") || tempCd[i].Equals(".."))
                             {
                                 if (cdN != 0)
@@ -203,21 +208,16 @@ public class EchoDialog : IDialog<object>
                 try
                 {
                     string pwd = "/";
-                    await context.PostAsync(cdN.ToString());
-
                     for (int i = 0; i < cdN; i++)
                     {
                         pwd += cd[i] + "/";
                     }
-
-                    await context.PostAsync(pwd);
-
-
                     using (var client = new SshClient(host, username, password))
                     {
                         //Start the connection
                         client.Connect();
                         var output = client.RunCommand("cd " + pwd + ";" + text);
+                        
                         client.Disconnect();
                         await context.PostAsync(output.Result.ToString());
 
@@ -227,6 +227,26 @@ public class EchoDialog : IDialog<object>
                 {
                     await context.PostAsync("An error occurred");
                 }
+            }
+
+            if (text.Trim().Equals("exit"))
+            {
+                await context.PostAsync("exiting session..\n To connect to a new host type \"Connect\":)");
+                host = "";
+                username = "";
+                password = "";
+                cd = new List<String>();
+                cdN = 0;
+            }
+            else
+            {
+                string pwdFinal = "/";
+                for (int i = 0; i < cdN; i++)
+                {
+                    pwdFinal += cd[i] + "/";
+                }
+
+                await context.PostAsync("$" + pwdFinal + ">");
             }
             context.Wait(MessageReceivedAsync);
             return;
