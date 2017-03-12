@@ -73,7 +73,9 @@ public class EchoDialog : IDialog<object>
     protected bool waitingHost, waitingPassword, waitingUsername;
     protected String host, username, password;
     protected bool connectedToSSH;
-    protected SshClient client;
+    protected List<String> cd = new List<String>();
+    protected int cdN = 0;
+
     public async Task StartAsync(IDialogContext context)
     {
         context.Wait(MessageReceivedAsync);
@@ -87,7 +89,7 @@ public class EchoDialog : IDialog<object>
             context.Wait(MessageReceivedAsync);
             return;
         }
-        var text = message.Text;
+        var text = message.Text.Trim();
         if(text == "Connect")
         {
             waitingHost = true;
@@ -120,50 +122,102 @@ public class EchoDialog : IDialog<object>
             await context.PostAsync("Trying to connect..");
 
             //Set up the SSH connection
-            try {
+            try
+            {
+
+            using(var client = new SshClient(host, username, password)) { 
                 //Start the connection
-                this.client = new SshClient(host, username, password);
-                this.client.Connect();
-                var output = client.RunCommand("echo test");
-                this.client.Disconnect();
+                client.Connect();
+                var output = client.RunCommand("ls");
+                client.Disconnect();
+                this.connectedToSSH = true;
                 await context.PostAsync(output.Result.ToString());
+                
+                }
             }catch(Exception e)
             {
-                await context.PostAsync("A problem appeared"+e.Message);
-
+                await context.PostAsync("Invalid credentials. Please try again. Enter your host:");
+                this.waitingHost = true;
+                
             }
             context.Wait(MessageReceivedAsync);
             return;
         }
-
-
-        if (message.Text == "start")
+        if (this.connectedToSSH)
         {
-            PromptDialog.Confirm(
-                context,
-                AfterResetAsync,
-                "Are you sure you want to reset the count?",
-                "Didn't get that!",
-                promptStyle: PromptStyle.None);
+            if (text.StartsWith("cd"))
+            {
+                //construct cd string
+                //run command on generated cd string
+                //if successful
+                if (text.Trim().Equals("cd"))
+                {
+
+                }
+                else if (text.Trim().IndexOf('/') == -1)
+                {
+                    if (text.Substring(text.IndexOf(" ")).Trim().Equals(".."))
+                    {
+                        if (cdN != 0)
+                            cdN--;
+                    }
+                    else
+                    {
+                        cdN++;
+                        cd.Add(text.Substring(text.IndexOf(" ")).Trim());
+                    }
+                }
+                else
+                {
+                    String[] tempCd = text.Substring(text.IndexOf(" ")).Trim().Split('/');
+                    for (int i = 0; i < tempCd.Length; ++i)
+                    {
+                        if (tempCd.Equals(".."))
+                        {
+                            if (cdN != 0)
+                            {
+                                cdN--;
+                            }
+                        }
+                        else
+                        {
+                            cd.Add(tempCd[i]);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                try
+                {
+                    string pwd = "/";
+                    for (int i = 0; i < cdN; i++)
+                    {
+                        pwd += cd[i] + "/";
+                    }
+
+                    using (var client = new SshClient(host, username, password))
+                    {
+                        //Start the connection
+                        client.Connect();
+                        var output = client.RunCommand("cd " + pwd + ";" + text);
+                        client.Disconnect();
+                        await context.PostAsync(output.Result.ToString());
+
+                    }
+                }
+                catch (Exception e)
+                {
+                    await context.PostAsync("An error occurred");
+                }
+                context.Wait(MessageReceivedAsync);
+                return;
+            }
         }
-        else
-        {
+        
+        else {
             await context.PostAsync($"{this.count++}: You said {message.Text}");
             context.Wait(MessageReceivedAsync);
         }
-    }
-    public async Task AfterResetAsync(IDialogContext context, IAwaitable<bool> argument)
-    {
-        var confirm = await argument;
-        if (confirm)
-        {
-            this.count = 1;
-            await context.PostAsync("Reset count.");
-        }
-        else
-        {
-            await context.PostAsync("Did not reset count.");
-        }
-        context.Wait(MessageReceivedAsync);
     }
 }
