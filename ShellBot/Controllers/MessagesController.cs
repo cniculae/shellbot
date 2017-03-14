@@ -89,7 +89,7 @@ public class EchoDialog : IDialog<object>
         if (this.firstMessage)
         {
             firstMessage = false;
-            await context.PostAsync("Hey. I'm shell bot and I can run for you SSH commands on any server you want. Try me by typing \"Connect\" :)");
+            await context.PostAsync("Hey. I'm ShellBot. I was developed by Andrea D'Olimpio, Bogdan Stanga, Cristian Niculae, and Andrei Cristea, for the Facebook Hackathon. I can run for you SSH commands on any server you want. Try me by typing \"Connect\" :)");
             context.Wait(MessageReceivedAsync);
             return;
         }
